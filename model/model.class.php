@@ -17,20 +17,34 @@
 		 abstract protected function setData($data);
 		 abstract protected function setTable();    
 
-		 /*
-		 *	Getter
-		 */
+		  /**
+		  *
+		  * @set undefined vars
+		  *
+		  * @param string $index
+		  *
+		  * @param mixed $value
+		  *
+		  * @return void
+		  *
+		  */
+		  public function __set($index, $value)
+		  {
+		 	$this->$index = $value;
+		  }
 
-	 	public function __get($name) {
-	         return $this->$name;
-	     }
-
-	     /*
-	     *	Setter
-	     */
-
-	     public function __set($name, $value) {
-	         $this->$name = $value;
-	     }
+		  /**
+		  *
+		  * @get variables
+		  *
+		  * @param mixed $index
+		  *
+		  * @return mixed
+		  *
+		  */
+		  public function __get($index)
+		  {
+		 	return $this->$index;
+		  }
 	}
 ?>

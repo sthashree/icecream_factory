@@ -3,7 +3,6 @@
 <head>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 	<div id="container">

@@ -49,7 +49,6 @@ class DB {
 				$elements[] = $key;
 				$element_values[] = $val;
 			}
-			print_r($element_values);
 			try{
 					if(count($id) > 0)
 					{
@@ -75,7 +74,6 @@ class DB {
 				 	  //print $e->getMessage();
 				}
 		}
-		//echo $id_val;
 		return $id_val;
 	}
 
@@ -118,7 +116,7 @@ class DB {
 				}
 			catch(Exception $e)
 				{
-				 	  echo $e->getMessage();
+				 	//  echo $e->getMessage();
 				}
 		return $item;
 	}

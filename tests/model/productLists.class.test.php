@@ -20,4 +20,13 @@ class productListsClassTest extends PHPUnit_Framework_TestCase {
 		$this->assertGreaterThan(0, count($output));	
 	}
 
+	public function test_getFlavours()
+	{
+		$objProductLists = new ProductLists($this->db);
+		$class = new ReflectionClass ($objProductLists);
+		$method = $class->getMethod ('getFlavours');
+		$output = $method->invoke ($objProductLists);
+		$this->assertGreaterThan(0, count($output));	
+	}
+
 }

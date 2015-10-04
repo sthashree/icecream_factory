@@ -40,6 +40,7 @@ class DB {
 	function Save($id = array())
 	{
 		$status = FALSE;
+		$id_val = 0;
 		if(is_array($this->_data))
 		{
 			
@@ -48,6 +49,7 @@ class DB {
 				$elements[] = $key;
 				$element_values[] = $val;
 			}
+			print_r($element_values);
 			try{
 					if(count($id) > 0)
 					{
@@ -73,6 +75,7 @@ class DB {
 				 	  //print $e->getMessage();
 				}
 		}
+		//echo $id_val;
 		return $id_val;
 	}
 
@@ -87,13 +90,14 @@ class DB {
 	
 	function Find($limit = null,$id = 'all',$field='id',$order='asc',$cols=array('*'))
 	{
+		$item = array();
 		try{
 					if(intval($id) > 0)
 					{
-						$sql = "select * from ".$this->_uses." where id = ".$id." order by $field $order limit 0,1";
+						$sql = "select * from ".$this->_uses." where ".$field." = ".$id." order by $field $order limit 0,1";
 						$result = $this->_conn->query(trim($sql));
-					    $result->setFetchMode(PDO::FETCH_CLASS,Stdclass);
 						$item = $result->fetchObject();
+						
 					}
 					else
 					{
@@ -114,7 +118,7 @@ class DB {
 				}
 			catch(Exception $e)
 				{
-				 	  //echo $e->getMessage();
+				 	  echo $e->getMessage();
 				}
 		return $item;
 	}

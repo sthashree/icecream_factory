@@ -51,6 +51,7 @@
 		public function save()
 		{
 			$valid_data = array();
+			$cart_id = array();
 			$cart_data['amount'] = 0;
 			foreach($this->_data as $key => $data)
 			{
@@ -77,12 +78,13 @@
 			$this->_db->setTable('cart_product');
 			$this->_db->setData($valid_data);
 			$this->_db->Save();
+			return $valid_data['cart_id'];
 		}
 
 		/*
 			get cart information
 		*/
-		protected function cartInfo()
+		public function cartInfo()
 		{
 			$search = "created_user = 1 AND ordered_date = '0000-00-00 00:00:00'";
 			return $this->_db->SearchCustom('cart', $search);

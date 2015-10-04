@@ -11,14 +11,14 @@
 		*	Set Data
 		*/
 
-		protected function setData($data) {
+		public function setData($data) {
 			$this->_db->setData($this->data);
 		}
 
 		/*
 		*	Set Table
 		*/
-		protected function setTable() {
+		public function setTable() {
 			$this->_db->setTable($this->table);
 		}
 
@@ -27,7 +27,8 @@
 		*/
 		public function getProduct()
 		{
-			return $this->_db->find('', $product_id);
+			echo $this->product_id;
+			return $this->_db->Find('', $this->product_id, 'product_id');
 		}
 
 

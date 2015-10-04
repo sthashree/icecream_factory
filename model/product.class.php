@@ -27,7 +27,6 @@
 		*/
 		public function getProduct()
 		{
-			echo $this->product_id;
 			return $this->_db->Find('', $this->product_id, 'product_id');
 		}
 
